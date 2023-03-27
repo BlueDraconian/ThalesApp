@@ -1,0 +1,60 @@
+﻿@model List<EmployeeModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" style="margin-top:30px" >
+    <div class="col-sm-12">
+        <div >
+            <div>
+                <h1>Employee List</h1>
+            </div>
+            <br />
+            <div>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        User ID:
+                        <input type="number" name="id" />
+                        <input type="submit" class="btn btn-success" value="Search">
+                    </p>
+                }
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-success">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Anual Salary</th>
+                        <th>Age</th>
+                        <th>Profile image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var employee in Model)
+                        {
+                            <tr>
+                                <td>@employee.ID</td>
+                                <td>@employee.Employee_Name</td>
+                                <td>@employee.Employee_Salary</td>
+                                <td>@employee.Employee_Anual_Salary</td>
+                                <td>@employee.Employee_Age</td>
+                                <td>@employee.Profile_Image</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
