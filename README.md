@@ -1,6 +1,6 @@
 # ThalesApp
 
-Hello!
+Hello, I'm Brayden Rincón.
 
 This is the software developer test.
 
